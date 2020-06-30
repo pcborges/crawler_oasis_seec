@@ -1,0 +1,33 @@
+{
+  "name": "oasis",
+  "version": "1.0.0",
+  "description": "Crawler de demandas do oasis",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "crawler",
+    "oasis"
+  ],
+  "author": "Patrick Borges",
+  "license": "ISC",
+  "dependencies": {
+    "google-spreadsheet": "^3.0.11",
+    "googleapis": "^39.2.0",
+    "puppeteer": "^3.3.0"
+  },
+  "devDependencies": {
+    "playwright": "^1.0.2"
+  },
+  "bin": "index.js",
+  "pkg": {
+    "assets": [
+      "src/**/*",
+      "temp/**/*"
+    ],
+    "targets": [
+      "node13"
+    ]
+  }
+}
