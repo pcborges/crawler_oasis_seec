@@ -16,11 +16,10 @@
   "dependencies": {
     "google-spreadsheet": "^3.0.11",
     "googleapis": "^39.2.0",
+    "playwright": "^1.1.1",
     "puppeteer": "^3.3.0"
   },
-  "devDependencies": {
-    "playwright": "^1.0.2"
-  },
+  "devDependencies": {},
   "bin": "index.js",
   "pkg": {
     "assets": [
