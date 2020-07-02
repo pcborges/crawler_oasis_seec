@@ -26,11 +26,17 @@ async function start() {
   console.log("> [Sanitizer] - Demandas atualizadas com sucesso");
   return demandasSanitizadas
     .filter(removeDemandasFaturadas)
+    .filter(removeDemandasCanceladas)
     .sort(util.sortByOasis);
 }
 
 function removeDemandasFaturadas(demanda) {
   if (demanda.status.toLowerCase().includes("fatura")) return false;
+  return true;
+}
+
+function removeDemandasCanceladas(demanda) {
+  if (demanda.status.toLowerCase().includes("cancelada")) return false;
   return true;
 }
 
