@@ -1,5 +1,5 @@
 const { GoogleSpreadsheet } = require("google-spreadsheet");
-const { google_api: keys, sheetId } = require("../credentials.json");
+const { google_api: keys, sheetId } = require("../google-credentials.json");
 var state = require("./state");
 var util = require("./util");
 const fileName = "./temp/demandas_sheets.json";

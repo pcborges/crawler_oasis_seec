@@ -2,7 +2,7 @@ const { firefox } = require("playwright");
 
 var state = require("./state");
 const fileName = "./temp/demandas_oasis.json";
-const { oasis } = require("../credentials.json");
+const { oasis } = require("../google-credentials.json");
 
 const { user, pass, urlSistema, sistemas } = oasis;
 const start = async () => {

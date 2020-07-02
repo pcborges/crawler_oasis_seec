@@ -3,6 +3,6 @@ build
 npm-debug.log
 .env
 .DS_Store
-credentials*
+*credentials*
 temp/*
 !.gitkeep
