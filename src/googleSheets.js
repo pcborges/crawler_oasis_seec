@@ -1,14 +1,15 @@
 const { GoogleSpreadsheet } = require("google-spreadsheet");
-const { google_api: keys, sheetId } = require("../google-credentials.json");
+require("dotenv").config();
+
 var state = require("./state");
-var util = require("./util");
 const fileName = "./temp/demandas_sheets.json";
 
-const doc = new GoogleSpreadsheet(sheetId);
+const doc = new GoogleSpreadsheet(process.env.GOOGLE_SPREADSHEET_ID);
 const credentials = {
-  client_email: keys.client_email,
-  private_key: keys.private_key,
+  client_email: process.env.GOOGLE_API_CLIENT_EMAIL,
+  private_key: process.env.GOOGLE_API_PRIVATE_KEY,
 };
+
 let header = [
   "oasis",
   "sustentacao",

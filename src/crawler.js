@@ -1,10 +1,11 @@
 const { firefox } = require("playwright");
+let state = require("./state");
+require("dotenv").config();
 
-var state = require("./state");
 const fileName = "./temp/demandas_oasis.json";
-const { oasis } = require("../google-credentials.json");
+const urlSistema = process.env.OASIS_URL;
+const sistemas = ["SITAF-LANC", "SITAF-PARC", "SITAF-CERT"];
 
-const { user, pass, urlSistema, sistemas } = oasis;
 const start = async () => {
   const browser = await firefox.launch({ headless: true });
   const page = await browser.newPage();
@@ -12,8 +13,8 @@ const start = async () => {
     console.log("> [Crawler] - Inicializando...");
     // Fazendo login
     await page.goto(urlSistema);
-    await page.fill("#usuario", user);
-    await page.fill("#senha", pass);
+    await page.fill("#usuario", process.env.OASIS_USER);
+    await page.fill("#senha", process.env.OASIS_PASS);
     await page.click("button#btLogin");
     const url = page.url().toString();
     if (url.includes("error")) throw "Usuário ou senha inválido";
