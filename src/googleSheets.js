@@ -10,6 +10,7 @@ const credentials = {
   private_key: process.env.GOOGLE_API_PRIVATE_KEY,
 };
 
+console.log("> [Sheets] - Credentials..", credentials);
 let header = [
   "oasis",
   "sustentacao",
