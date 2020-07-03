@@ -1,4 +1,4 @@
-const { firefox } = require("playwright");
+const { firefox } = require("playwright-firefox");
 let state = require("./state");
 require("dotenv").config();
 
@@ -7,10 +7,7 @@ const urlSistema = process.env.OASIS_URL;
 const sistemas = ["SITAF-LANC", "SITAF-PARC", "SITAF-CERT"];
 
 const start = async () => {
-  const browser = await firefox.launch({
-    headless: true,
-    args: ["--no-sandbox", "--disable-setuid-sandbox"],
-  });
+  const browser = await firefox.launch({ headless: true });
   const page = await browser.newPage();
   try {
     console.log("> [Crawler] - Inicializando...");
