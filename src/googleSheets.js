@@ -7,10 +7,9 @@ const fileName = "./temp/demandas_sheets.json";
 const doc = new GoogleSpreadsheet(process.env.GOOGLE_SPREADSHEET_ID);
 const credentials = {
   client_email: process.env.GOOGLE_API_CLIENT_EMAIL,
-  private_key: process.env.GOOGLE_API_PRIVATE_KEY,
+  private_key: process.env.GOOGLE_API_PRIVATE_KEY.replace(/\\n/g, "\n"),
 };
 
-console.log("> [Sheets] - Credentials..", credentials);
 let header = [
   "oasis",
   "sustentacao",
