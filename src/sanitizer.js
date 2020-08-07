@@ -10,10 +10,9 @@ async function start() {
       (demandaSheets) => demandaSheets.oasis === demandaOasis.oasis
     );
     if (!demandaEncontrada) return demandaOasis;
-    if (demandaOasis.status === demandaEncontrada.status)
-      return demandaEncontrada;
 
     demandaEncontrada.status = demandaOasis.status;
+    demandaEncontrada.tipoDemanda = demandaOasis.tipoDemanda;
     return demandaEncontrada;
   });
   demandasSheets.forEach((demanda) => {
